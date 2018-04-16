@@ -1,0 +1,62 @@
+﻿        <!-- Side-Nav-->
+<aside class="main-sidebar hidden-print ">
+    <section class="sidebar" id="sidebar-scroll">
+
+        <div class="user-panel">
+            <div class="f-left image"><img src="~/assets/images/doctor.png" alt="User Image" class="img-circle"></div>
+            <div class="f-left info">
+                <p>Шевченко Пётр</p>
+                <p class="designation">Администратор <i class="icofont icofont-caret-down m-l-5"></i></p>
+            </div>
+        </div>
+        <!-- sidebar profile Menu-->
+        <ul class="nav sidebar-menu extra-profile-list">
+            <li>
+                <a class="waves-effect waves-dark" href="profile.html">
+                    <i class="icon-user"></i>
+                    <span class="menu-text">Профиль</span>
+                    <span class="selected"></span>
+                </a>
+            </li>
+            <li>
+                <a class="waves-effect waves-dark" href="javascript:void(0)">
+                    <i class="icon-settings"></i>
+                    <span class="menu-text">Натройки</span>
+                    <span class="selected"></span>
+                </a>
+            </li>
+            <li>
+                <a class="waves-effect waves-dark" href="javascript:void(0)">
+                    <i class="icon-logout"></i>
+                    <span class="menu-text">Выход</span>
+                    <span class="selected"></span>
+                </a>
+            </li>
+        </ul>
+        <!-- Sidebar Menu-->
+        <ul class="sidebar-menu">
+            <li class="nav-level">Основное</li>
+            <li id="reporting" class="treeview">
+                <a class="waves-effect waves-dark" href="@Url.Action("Reporting")">
+                    <i class="icon-chart"></i><span> Отчётность</span>
+                </a>
+            </li>
+            <li id="appointment" class="treeview">
+                <a class="waves-effect waves-dark" href="@Url.Action("Appointment")">
+                    <i class="icon-calendar"></i><span> Запись на приём</span>
+                </a>
+            </li>
+            <li class="nav-level">Справочники</li>
+            <li id="clients" class="treeview">
+                <a class="waves-effect waves-dark" href="@Url.Action("Clients")">
+                    <i class="icon-user"></i><span> Клиенты</span>
+                </a>
+            </li>
+            <li id="employees" class="treeview">
+                <a class="waves-effect waves-dark" href="@Url.Action("Employees")">
+                    <i class="icon-list"></i><span> Сотрудники</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+</aside>

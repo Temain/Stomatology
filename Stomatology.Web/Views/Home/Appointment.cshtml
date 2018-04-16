@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Запись на приём";
+}
+
+<div class="content-wrapper">
+    <!-- Container-fluid starts -->
+    <!-- Main content starts -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main-header">
+                <h4>Запись на приём</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $(".sidebar-menu .active").removeClass("active");
+            $("#appointment").addClass("active");
+        });
+    </script>
+}

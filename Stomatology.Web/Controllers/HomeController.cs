@@ -19,7 +19,17 @@ namespace Stomatology.Web.Controllers
             return View();
         }
 
+        public ActionResult AddAppointment()
+        {
+            return View();
+        }
+
         public ActionResult Clients()
+        {
+            return View();
+        }
+
+        public ActionResult ShowClient()
         {
             return View();
         }

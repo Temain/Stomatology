@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Запись на приём";
+}
+
+<div class="content-wrapper">
+    <!-- Container-fluid starts -->
+    <!-- Main content starts -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main-header">
+                <h4>Запись на приём</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Form Control starts -->
+            <div class="col-lg-8">
+                <div class="card">                                 
+                    <div class="card-block">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="form-control-label">Фамилия</label>
+                                <input class="form-control" id="exampleInputEmail1" placeholder="Введите фамилию...">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="form-control-label">Имя</label>
+                                <input class="form-control" id="exampleInputEmail1" placeholder="Введите имя...">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="form-control-label">Отчество</label>
+                                <input class="form-control" id="exampleInputEmail1" placeholder="Введите отчество...">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" class="form-control-label">Номер телефона</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Введите номер телефона...">
+                            </div> 
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" class="form-control-label">Электронная почта</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Введите почту...">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" class="form-control-label">Дата приёма</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Выберите дату...">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleSelect2" class="form-control-label">Выберите операции</label>
+                                <select multiple="" class="form-control multiple-select" id="exampleSelect2">
+                                    <option>Коронка, зуб временные пластмассовые (лабораторное изготовление)</option>
+                                    <option>Слепок + диагностическая модель </option>
+                                    <option>Удаление постоянного зуба сложное</option>
+                                </select>
+                            </div>
+                            <fieldset class="form-group">
+                                <label class="form-control-label">Источник привлечения</label>
+                                <div class="form-check">
+                                    <label for="optionsRadios1" class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                        Друзья
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label for="optionsRadios2" class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                                        Сайт
+                                    </label>
+                                </div>
+                                <div class="form-check disabled">
+                                    <label for="optionsRadios3" class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
+                                        Реклама
+                                    </label>
+                                </div>
+                            </fieldset>
+                            @*<div class="form-check">
+                                <label for="chkme" class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" id="chkme">
+                                    Check me out
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    Option one is this and that—be sure to include why it's great
+                                </label>
+                            </div>
+                            <div class="form-check disabled">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" value="" disabled="">
+                                    Option two is disabled
+                                </label>
+                            </div>*@
+                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-30">Сохранить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Form Control ends -->
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $(".sidebar-menu .active").removeClass("active");
+            $("#clients").addClass("active");
+        });
+    </script>
+}

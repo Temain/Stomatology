@@ -2,7 +2,7 @@
 <header class="main-header-top hidden-print">
     <a href="index.html" class="logo">
         @*<img class="img-fluid able-logo" src="~/assets/images/tooth.png" alt="Theme-logo">*@
-        Стоматология
+        СЦ "Элит"
     </a>
     <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button--><a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
@@ -81,8 +81,14 @@
                             <div class="dropdown-divider m-0"></div>
                         </li>
                         @*<li><a href="lock-screen.html"><i class="icon-lock"></i> З</a></li>*@
-                        <li><a href="#!"><i class="icon-logout"></i> Выход</a></li>
-
+                        <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="icon-logout"></i> Выход</a></li>
+                        @if (Request.IsAuthenticated)
+                        {
+                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                            {
+                                @Html.AntiForgeryToken()
+                            }
+                        }
                     </ul>
                 </li>
             </ul>

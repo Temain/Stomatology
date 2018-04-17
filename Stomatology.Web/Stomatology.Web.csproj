@@ -929,6 +929,16 @@
     <Content Include="assets\plugins\rickshaw\vendor\d3.min.js" />
     <Content Include="assets\plugins\rickshaw\vendor\d3.v2.js" />
     <Content Include="assets\plugins\rickshaw\vendor\d3.v3.js" />
+    <Content Include="assets\plugins\schedule-template-master\css\reset.css" />
+    <Content Include="assets\plugins\schedule-template-master\css\style.css" />
+    <Content Include="assets\plugins\schedule-template-master\event-abs-circuit.html" />
+    <Content Include="assets\plugins\schedule-template-master\event-restorative-yoga.html" />
+    <Content Include="assets\plugins\schedule-template-master\event-rowing-workout.html" />
+    <Content Include="assets\plugins\schedule-template-master\event-yoga-1.html" />
+    <Content Include="assets\plugins\schedule-template-master\index.html" />
+    <Content Include="assets\plugins\schedule-template-master\js\jquery-3.0.0.min.js" />
+    <Content Include="assets\plugins\schedule-template-master\js\main.js" />
+    <Content Include="assets\plugins\schedule-template-master\js\modernizr.js" />
     <Content Include="assets\plugins\search\css\component.css" />
     <Content Include="assets\plugins\search\img\magnifier.svg" />
     <Content Include="assets\plugins\select2\css\s2-docs.css" />
@@ -1416,6 +1426,11 @@
     <Content Include="assets\scss\responsive.css.map" />
     <Content Include="assets\scss\responsive.scss" />
     <Content Include="assets\scss\_genral.scss" />
+    <Content Include="assets\plugins\schedule-template-master\partials\_layout.scss" />
+    <Content Include="assets\plugins\schedule-template-master\partials\_mixins.scss" />
+    <Content Include="assets\plugins\schedule-template-master\partials\_variables.scss" />
+    <Content Include="assets\plugins\schedule-template-master\README.md" />
+    <Content Include="assets\plugins\schedule-template-master\scss\style.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap-grid.min.css" />
@@ -2217,6 +2232,8 @@
     <Content Include="Views\Home\Appointment.cshtml" />
     <Content Include="Views\Home\Clients.cshtml" />
     <Content Include="Views\Home\Employees.cshtml" />
+    <Content Include="Views\Home\AddAppointment.cshtml" />
+    <Content Include="Views\Home\ShowClient.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

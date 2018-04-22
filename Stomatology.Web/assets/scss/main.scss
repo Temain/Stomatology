@@ -85,7 +85,7 @@ i {
 label {
     @include c(rgba(43, 61, 81, 0.8));
     @include f-w(500);
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 h6 {

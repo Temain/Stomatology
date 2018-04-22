@@ -1,6 +1,5 @@
-﻿
-@{
-    ViewBag.Title = "Клиенты";
+﻿@{
+    ViewBag.Title = "Материалы";
 }
 
 <div class="content-wrapper">
@@ -9,10 +8,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="main-header">
-                <h4>Клиенты</h4>
-                <a href="#" class="btn btn-md btn-add btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить клиента">
-                    Добавить
-                </a>
+                <h4>Материалы</h4>
             </div>
         </div>
 
@@ -21,9 +17,9 @@
                 <!-- Hover effect table starts -->
                 <div class="card">
                     @*<div class="card-header">
-                        <h5 class="card-header-text">Hover Effects on Row</h5>
-                        <p>Add <code>.table-hover</code> Class in table tag</p>
-                    </div>*@
+                            <h5 class="card-header-text">Hover Effects on Row</h5>
+                            <p>Add <code>.table-hover</code> Class in table tag</p>
+                        </div>*@
                     <div class="card-block">
                         <div class="row">
                             <div class="col-sm-12 table-responsive">
@@ -151,7 +147,7 @@
     <script>
         $(function () {
             $(".sidebar-menu .active").removeClass("active");
-            $("#clients").addClass("active");
+            $("#materials").addClass("active");
         });
     </script>
 }

@@ -1,4 +1,4 @@
-/**
+﻿/**
 
 Template Name: Able Pro Responsive Bootstrap 4 Admin Template
 Author: Phoenixcoded
@@ -77,7 +77,7 @@ i {
 label {
   color: rgba(43, 61, 81, 0.8);
   font-weight: 500;
-  text-transform: capitalize; }
+  /*text-transform: capitalize;*/ }
 
 h6 {
   color: #757575;
@@ -158,6 +158,7 @@ textarea {
 
 .generic-card-body strong {
   display: block; }
+
 .generic-card-body code {
   cursor: pointer;
   display: inline-block;
@@ -193,6 +194,7 @@ textarea {
   width: 50px; }
   .icon-list-demo i:hover {
     color: #64b0f2; }
+
 .icon-list-demo div {
   cursor: pointer;
   white-space: nowrap;
@@ -261,6 +263,7 @@ textarea {
     -moz-transform: scale(2.5);
     -ms-transform: scale(2.5);
     transform: scale(2.5); } }
+
 @keyframes drop {
   100% {
     opacity: 0;
@@ -268,6 +271,7 @@ textarea {
     -moz-transform: scale(2.5);
     -ms-transform: scale(2.5);
     transform: scale(2.5); } }
+
 .materialSelect {
   height: 48px;
   position: relative;
@@ -494,10 +498,12 @@ textarea {
   -ms-transition: left 0.3s ease-out;
   transition: left 0.3s ease-out;
   bottom: 0; }
+
 .nav-tabs.tabs-left .slide {
   height: 35px;
   width: 4px;
   bottom: 15px; }
+
 .nav-tabs.tabs-right .slide {
   height: 35px;
   width: 4px;
@@ -1151,6 +1157,7 @@ textarea {
 
 .breadcrumb .breadcrumb-item .home::before {
   content: "\f124"; }
+
 .breadcrumb > li {
   display: inline-block; }
 
@@ -1285,6 +1292,7 @@ Basic card CSS
 
 .color-card footer, .color-card p {
   color: #fff; }
+
 .color-card .color-default footer, .color-card .color-default p {
   color: #222; }
 
@@ -1692,6 +1700,7 @@ Basic card CSS
     -moz-animation: red-btry 2s linear 0s infinite;
     -ms-animation: red-btry 2s linear 0s infinite;
     animation: red-btry 2s linear 0s infinite; }
+
 .btry-loader .radius {
   position: absolute;
   top: 50%;
@@ -1721,21 +1730,25 @@ Basic card CSS
     height: 20px; }
   100% {
     height: 36px; } }
+
 @keyframes red-btry {
   0% {
     height: 20px; }
   100% {
     height: 36px; } }
+
 @-webkit-keyframes rotation {
   0% {
     transform: rotate(0deg); }
   100% {
     transform: rotate(60deg); } }
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg); }
   100% {
     transform: rotate(60deg); } }
+
 /* bar loader */
 .loader-bg {
   position: fixed;
@@ -1768,6 +1781,7 @@ Basic card CSS
     width: 60%; }
   100% {
     width: 80%; } }
+
 @keyframes barfiller {
   0% {
     width: 0; }
@@ -1779,6 +1793,7 @@ Basic card CSS
     width: 60%; }
   100% {
     width: 80%; } }
+
 /*Preloader CSS Ends*/
 /*full screen start*/
 :-webkit-full-screen #myObject {
@@ -1801,6 +1816,7 @@ Basic card CSS
   font-size: 16px;
   margin-top: 0;
   padding-top: 1em; }
+
 #external-events .fc-event {
   background: #f3f3f3;
   color: #000;
@@ -1808,6 +1824,7 @@ Basic card CSS
   border-left: none;
   padding: 5px 18px;
   margin-bottom: 5px; }
+
 #external-events p {
   margin: 1.5em 0;
   font-size: 11px;
@@ -1815,15 +1832,18 @@ Basic card CSS
   #external-events p input {
     margin: 0;
     vertical-align: middle; }
+
 #external-events .rkmd-checkbox {
   margin-top: 10px;
   margin-bottom: 10px; }
 
 .fc td, .fc th {
   line-height: 2.5; }
+
 .fc button {
   height: auto;
   padding: 10px; }
+
 .fc .fc-toolbar > * > * {
   margin-left: 0; }
 
@@ -2406,11 +2426,13 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
     opacity: 0;
     -webkit-transform: scale(1.6);
     transform: scale(1.6); } }
+
 @keyframes checkbox-ripple {
   100% {
     opacity: 0;
     -webkit-transform: scale(1.6);
     transform: scale(1.6); } }
+
 /**========= Fade-In Checkbox =========**/
 .fade-in-danger,
 .fade-in-default,
@@ -2446,10 +2468,12 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
     -moz-transition: all 0.3s ease-in;
     -ms-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in; }
+
 .checkbox-fade label:after, .radio label:after {
   content: '';
   display: table;
   clear: both; }
+
 .checkbox-fade .cr, .radio .cr {
   position: relative;
   display: inline-block;
@@ -2619,20 +2643,25 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
     transition: transform 0.28s ease, -webkit-transform 0.28s ease;
     border-radius: 50%;
     border: 0.125rem solid currentColor; }
+
 .radio label:hover .helper {
   color: #1b8bf9; }
+
 .radio input:checked ~ .helper::after {
   -webkit-transform: scale(0.5);
   -moz-transform: scale(0.5);
   -ms-transform: scale(0.5);
   transform: scale(0.5); }
+
 .radio input:checked ~ .helper::before {
   color: #1b8bf9; }
+
 .radio.radiofill input:checked ~ .helper::after {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1); }
+
 .radio.radiofill .helper::after {
   background-color: #1b8bf9; }
 
@@ -2779,6 +2808,7 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
   text-align: center; }
   .invoice-detail-table td:first-child {
     text-align: left; }
+
 .invoice-detail-table thead th {
   text-align: center; }
   .invoice-detail-table thead th:first-child {
@@ -2825,8 +2855,10 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 
 .task-list-table td, .task-list-table th {
   vertical-align: middle; }
+
 .task-list-table img {
   width: 40px; }
+
 .task-list-table i {
   color: #333;
   margin-right: 5px; }
@@ -2838,9 +2870,11 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 .task-list .table-content {
   padding-left: 20px;
   padding-right: 20px; }
+
 .task-list input {
   cursor: pointer;
   font-weight: 600; }
+
 .task-list img {
   margin-right: 5px;
   display: inline-block; }
@@ -2860,6 +2894,7 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 .task-detail-right .counter {
   text-align: center;
   color: #777; }
+
 .task-detail-right .card-block table i, .task-detail-right .card-header h5 i {
   margin-right: 5px; }
 
@@ -2944,16 +2979,19 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 
 #RC .slider-selection {
   background: #FF8282; }
+
 #RC .slider-handle {
   background: red; }
 
 #GC .slider-selection {
   background: #428041; }
+
 #GC .slider-handle {
   background: green; }
 
 #BC .slider-selection {
   background: #8283FF; }
+
 #BC .slider-handle {
   border-bottom-color: blue; }
 
@@ -2978,6 +3016,7 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 
 #slider22 .slider-selection {
   background: #2196F3; }
+
 #slider22 .slider-rangeHighlight {
   background: #f70616; }
 
@@ -3009,6 +3048,7 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 
 .comming-soon-from input {
   width: 50%; }
+
 .comming-soon-from button {
   width: 20%; }
 
@@ -3266,9 +3306,9 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
     content: "#c042ff"; }
 
 .purple-colors ul li:nth-child(10) {
-  background-color: #c551ff; }
+  background-color: #c552ff; }
   .purple-colors ul li:nth-child(10) p:before {
-    content: "#c551ff"; }
+    content: "#c552ff"; }
 
 .purple-colors ul li:nth-child(9) {
   background-color: #ca61ff; }
@@ -3425,9 +3465,9 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
     content: "#8d9efe"; }
 
 .indigo-colors ul li:nth-child(7) {
-  background-color: #9aa8ff; }
+  background-color: #9aa9ff; }
   .indigo-colors ul li:nth-child(7) p:before {
-    content: "#9aa8ff"; }
+    content: "#9aa9ff"; }
 
 .indigo-colors ul li:nth-child(6) {
   background-color: #a6b3ff; }
@@ -3986,9 +4026,9 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
     content: "#ffe042"; }
 
 .yellow-colors ul li:nth-child(10) {
-  background-color: #ffe351; }
+  background-color: #ffe352; }
   .yellow-colors ul li:nth-child(10) p:before {
-    content: "#ffe351"; }
+    content: "#ffe352"; }
 
 .yellow-colors ul li:nth-child(9) {
   background-color: #ffe561; }
@@ -4058,9 +4098,9 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
     content: "#ffc042"; }
 
 .amber-colors ul li:nth-child(10) {
-  background-color: #ffc551; }
+  background-color: #ffc552; }
   .amber-colors ul li:nth-child(10) p:before {
-    content: "#ffc551"; }
+    content: "#ffc552"; }
 
 .amber-colors ul li:nth-child(9) {
   background-color: #ffca61; }
@@ -4130,9 +4170,9 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
     content: "#ff9242"; }
 
 .orange-colors ul li:nth-child(10) {
-  background-color: #ff9b51; }
+  background-color: #ff9b52; }
   .orange-colors ul li:nth-child(10) p:before {
-    content: "#ff9b51"; }
+    content: "#ff9b52"; }
 
 .orange-colors ul li:nth-child(9) {
   background-color: #ffa461; }
@@ -4566,6 +4606,7 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 .project-table img {
   height: 50px;
   width: 50px; }
+
 .project-table .label {
   padding: 5px 20px; }
 
@@ -4575,16 +4616,20 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
   margin-right: 15px;
   margin-top: 17px;
   margin-left: 17px; }
+
 .card-member .accordion-msg,
 .card-questioning .accordion-msg {
   font-weight: 400; }
+
 .card-member .acc-msg,
 .card-questioning .acc-msg {
   margin-bottom: 10px; }
+
 .card-member .acc-desc,
 .card-questioning .acc-desc {
   display: block;
   margin-bottom: 10px; }
+
 .card-member .ui-state-active,
 .card-questioning .ui-state-active {
   background-color: #1b8bf9;
@@ -4643,16 +4688,22 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 
 .panels-wells .panel-default {
   border-color: #ddd; }
+
 .panels-wells .panel-success {
   border-color: #4CAF50; }
+
 .panels-wells .panel-primary {
   border-color: #2196F3; }
+
 .panels-wells .panel-danger {
   border-color: #ff5252; }
+
 .panels-wells .panel-info {
   border-color: #40c4ff; }
+
 .panels-wells .panel-warning {
   border-color: #f57c00; }
+
 .panels-wells .panel {
   margin-bottom: 20px; }
   .panels-wells .panel .panel-body {
@@ -4855,6 +4906,7 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
       background-color: rgba(0, 0, 0, 0.5); }
       .demo-gallery > ul > li a:hover .demo-gallery-poster > img {
         opacity: 1; }
+
 .demo-gallery .justified-gallery > a > img {
   -webkit-transition: transform 0.15s ease 0s;
   -moz-transition: transform 0.15s ease 0s;
@@ -4866,6 +4918,7 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
   transform: scale3d(1, 1, 1);
   height: 100%;
   width: 100%; }
+
 .demo-gallery .justified-gallery > a .demo-gallery-poster {
   background-color: rgba(0, 0, 0, 0.1);
   bottom: 0;
@@ -4888,21 +4941,25 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
     -moz-transition: opacity 0.3s ease 0s;
     -ms-transition: opacity 0.3s ease 0s;
     transition: opacity 0.3s ease 0s; }
+
 .demo-gallery .justified-gallery > a:hover > img {
   -webkit-transform: scale3d(1.1, 1.1, 1.1);
   -moz-transform: scale3d(1.1, 1.1, 1.1);
   -ms-transform: scale3d(1.1, 1.1, 1.1);
   transform: scale3d(1.1, 1.1, 1.1); }
+
 .demo-gallery .justified-gallery > a:hover .demo-gallery-poster {
   background-color: rgba(0, 0, 0, 0.5); }
   .demo-gallery .justified-gallery > a:hover .demo-gallery-poster > img {
     opacity: 1; }
+
 .demo-gallery .video .demo-gallery-poster img {
   height: 48px;
   margin-left: -24px;
   margin-top: -24px;
   opacity: 0.8;
   width: 48px; }
+
 .demo-gallery.dark > ul > li a {
   border: 3px solid #04070a; }
 
@@ -5057,12 +5114,14 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 
 .weather-table tr td:first-child {
   width: 25%; }
+
 .weather-table .svg-icon svg {
   width: 21px !important;
   height: 21px !important; }
 
 .weather-live .svg-icon.d-flex .climacon_component-stroke {
   fill: rgba(255, 255, 255, 0.82); }
+
 .weather-live .svg-icon.d-flex svg {
   width: 80px !important;
   height: 80px !important; }
@@ -5094,8 +5153,10 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 .svg-icon svg {
   width: 50px !important;
   height: 50px !important; }
+
 .svg-icon .climacon_component-stroke {
   fill: rgba(43, 61, 81, 0.7); }
+
 .svg-icon .climacon_component-fill {
   fill: #bbbbbb; }
 
@@ -5139,9 +5200,11 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
   height: 130px;
   display: inline-block;
   margin-bottom: 20px; }
+
 .horizontal-card-img h2 {
   margin-bottom: 30px;
   font-weight: 400; }
+
 .horizontal-card-img ol li {
   color: #777;
   font-weight: 600;
@@ -5157,6 +5220,7 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
   border-bottom: 1px solid #ccc; }
   .widget-user-list .media:last-child, .widget-user-list .media:nth-child(4) {
     border-bottom: none; }
+
 .widget-user-list .media-body h6 {
   display: inline-block;
   font-size: 14px;
@@ -5165,6 +5229,7 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 /*Last activity widget*/
 .last-activity-table tr td:first-child {
   width: auto; }
+
 .last-activity-table .btn {
   margin-bottom: 5px; }
 
@@ -5238,12 +5303,14 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
   font-size: 12px;
   display: inline-block;
   margin-bottom: 10px; }
+
 .messages-content .media .media-left {
   padding-right: 25px; }
 
 .messages-send .form-control {
   padding: 20px;
   border-radius: 0; }
+
 .messages-send span {
   padding: 20px;
   border-radius: 0; }
@@ -5271,8 +5338,10 @@ svg#sun {
 
 .weather-detail .climacon_component-stroke {
   fill: #666; }
+
 .weather-detail .climacon_component-fill {
   fill: #fff; }
+
 .weather-detail li {
   padding: 0 12px;
   display: inline-block;
@@ -5286,6 +5355,7 @@ svg#sun {
   font-weight: 300;
   font-size: 35px;
   color: #2196F3; }
+
 .dashboard-total-income i {
   float: right;
   font-size: 30px;
@@ -5295,6 +5365,7 @@ svg#sun {
   position: absolute;
   top: 40px;
   left: 80%; }
+
 .widget-timeline .media {
   padding: 20px;
   font-size: 14px; }
@@ -5305,6 +5376,7 @@ svg#sun {
 /*Checkbox table css*/
 .check-table th:first-child {
   width: 1%; }
+
 .check-table th .fade-in-primary {
   margin-right: 0; }
 
@@ -5506,6 +5578,7 @@ svg#sun {
   font-size: 15px;
   padding-left: 0;
   padding-top: 0; }
+
 .contact-info .social-user-name, .view-info .social-user-name, .work-info .social-user-name {
   font-size: 14px;
   padding-left: 0; }
@@ -5593,16 +5666,20 @@ svg#sun {
 ==========================  **/
 #main-chat .chat-single-box .chat-header a {
   color: #666 !important; }
+
 #main-chat .chat-single-box.active .chat-header {
   background-color: #2196F3 !important; }
   #main-chat .chat-single-box.active .chat-header a {
     color: #fff !important; }
+
 #main-chat .minimized {
   background-color: #1e2730 !important; }
+
 #main-chat .chat-box ul.boxs li.chat-single-box .chat-header.custom-collapsed {
   position: absolute;
   bottom: 0;
   width: 300px; }
+
 #main-chat .chat-box ul.boxs li.minimized {
   height: 30px;
   width: 30px;
@@ -5641,6 +5718,7 @@ svg#sun {
           background-color: #c0c0c0 !important; }
       #main-chat .chat-box ul.boxs li.minimized .chat-dropdown li:hover {
         color: #000; }
+
 #main-chat .chat-box ul.boxs li .hidden {
   display: none; }
 
@@ -5704,6 +5782,7 @@ svg#sun {
 
 .friendlist-box .media-body .friend-header {
   font-size: 13px; }
+
 .friendlist-box .media-body span {
   font-size: 12px; }
 
@@ -5785,6 +5864,7 @@ svg#sun {
 
 .chat-menu-content .chat-cont, .chat-menu-reply .chat-cont {
   padding: 10px; }
+
 .chat-menu-content .chat-time, .chat-menu-reply .chat-time {
   padding-left: 10px;
   padding-bottom: 10px; }
@@ -5802,6 +5882,7 @@ svg#sun {
 .users-main .media .chat-header {
   font-size: 14px;
   font-weight: 600; }
+
 .users-main .media-body div + div {
   font-size: 12px; }
 
@@ -5831,11 +5912,13 @@ svg#sun {
 .write-msg input {
   border-radius: 0;
   border-right: 0; }
+
 .write-msg .btn {
   -webkit-box-shadow: none;
   box-shadow: none;
   border-left: 0;
   font-size: 14px; }
+
 .write-msg .btn-secondary:hover {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -5953,6 +6036,7 @@ svg#sun {
   padding-bottom: 5px;
   padding-left: 10px;
   display: inline-block; }
+
 .bg-dark-facebook .total-sales,
 .bg-dark-primary .total-sales,
 .bg-dark-success .total-sales,
@@ -5978,6 +6062,7 @@ svg#sun {
 .dashboard-resource .counter {
   color: #fff;
   display: inline-block; }
+
 .dashboard-resource .resource-used {
   text-align: right;
   color: #fff;
@@ -6025,19 +6110,23 @@ svg#sun {
 
 .photo-table img {
   display: inline-block; }
+
 .photo-table td {
   vertical-align: middle; }
+
 .photo-table i {
   margin-right: 5px; }
 
 .user-block-2 h5, .user-block-2 img {
   margin-bottom: 20px; }
+
 .user-block-2 h6 {
   color: #fff;
   font-weight: 300; }
 
 .user-block-2-active i {
   margin-right: 10px; }
+
 .user-block-2-active label {
   float: right;
   margin-bottom: 0; }
@@ -6061,9 +6150,22 @@ svg#sun {
 /* home chat css end */
 .income-per-day p {
   margin-bottom: 10px; }
+
 .income-per-day h6 {
   display: inline-block;
   margin-left: 5px; }
+
+.fixed-button {
+  position: fixed;
+  bottom: -50px;
+  right: 30px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: all 0.5s ease; }
+
+.fixed-button.active {
+  bottom: 50px;
+  opacity: 1; }
 
 /* === color css starts=== */
 .color-1 {
@@ -6198,4 +6300,3 @@ svg#sun {
 
 /* color css Ends */
 
-/*# sourceMappingURL=main.css.map */

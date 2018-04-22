@@ -1,16 +1,16 @@
-"use strict";
+﻿"use strict";
 $(document).ready(function(){
   $(window).resize(function() {
-  categoryChart();
-  strackingChart();
-  pieChart();
-donutChart();
-        });
+        //categoryChart();
+        //strackingChart();
+        //pieChart();
+        donutChart();
+    });
 
-  categoryChart();
-  strackingChart();
-  pieChart();
-donutChart();
+  //categoryChart();
+  //strackingChart();
+  //pieChart();
+  donutChart();
  
     /*categories chart*/
   function categoryChart(){
@@ -53,22 +53,22 @@ donutChart();
       lines = true,
       steps = false;
 
-    function plotWithOptions() {
-      $.plot("#placeholder1", [ d1, d2, d3 ], {
-        series: {
-          stack: stack,
-          lines: {
-            show: lines,
-            fill: true,
-            steps: steps
-          },
-          bars: {
-            show: bars,
-            barWidth: 0.6
-          }
-        }
-      });
-    }
+    //function plotWithOptions() {
+    //  $.plot("#placeholder1", [ d1, d2, d3 ], {
+    //    series: {
+    //      stack: stack,
+    //      lines: {
+    //        show: lines,
+    //        fill: true,
+    //        steps: steps
+    //      },
+    //      bars: {
+    //        show: bars,
+    //        barWidth: 0.6
+    //      }
+    //    }
+    //  });
+    //}
 
     plotWithOptions();
   };
@@ -90,16 +90,16 @@ donutChart();
   data: 4670,
   color: "#DEAB34"
 }];
-  $.plot('#placeholder2', data1, {
-    series: {
-        pie: {
-            show: true
-        }
-    },
-    legend: {
-        show: false
-    }
-});
+//  $.plot('#placeholder2', data1, {
+//    series: {
+//        pie: {
+//            show: true
+//        }
+//    },
+//    legend: {
+//        show: false
+//    }
+//});
 
   };
    
@@ -108,15 +108,15 @@ donutChart();
  function donutChart(){
   
 var data2 = [{
-  label: "Sales & Marketing",
+  label: "Сайт",
   data: 2034,
   color: "#62A83B"
 }, {
-  label: "Research & Development",
+  label: "Друзь¤",
   data: 16410,
   color: "#2897CB"
 }, {
-  label: "General & Administration",
+  label: "Реклама",
   data: 4670,
   color: "#DEAB34"
 }];

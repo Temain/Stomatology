@@ -15,59 +15,63 @@
 
         <div class="row">
             <!-- Form Control starts -->
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <div class="card">                                 
                     <div class="card-block">
                         <form>
                             <div class="form-group">
-                                <label for="exampleInputEmail1" class="form-control-label">Фамилия</label>
-                                <input class="form-control" id="exampleInputEmail1" placeholder="Введите фамилию...">
+                                <label for="middleName" class="form-control-label">Фамилия</label>
+                                <input class="form-control" id="middleName" placeholder="Введите фамилию...">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1" class="form-control-label">Имя</label>
-                                <input class="form-control" id="exampleInputEmail1" placeholder="Введите имя...">
+                                <label for="firstName" class="form-control-label">Имя</label>
+                                <input class="form-control" id="firstName" placeholder="Введите имя...">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1" class="form-control-label">Отчество</label>
-                                <input class="form-control" id="exampleInputEmail1" placeholder="Введите отчество...">
+                                <label for="secondName" class="form-control-label">Отчество</label>
+                                <input class="form-control" id="secondName" placeholder="Введите отчество...">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1" class="form-control-label">Номер телефона</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Введите номер телефона...">
+                                <label for="phone" class="form-control-label">Номер телефона</label>
+                                <input class="form-control" id="phone" placeholder="Введите номер телефона...">
                             </div> 
                             <div class="form-group">
-                                <label for="exampleInputPassword1" class="form-control-label">Электронная почта</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Введите почту...">
+                                <label for="email" class="form-control-label">Электронная почта</label>
+                                <input class="form-control" id="email" placeholder="Введите почту...">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1" class="form-control-label">Дата приёма</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Выберите дату...">
+                                <label for="appointmentDate" class="form-control-label">Дата приёма</label>
+                                <input class="form-control" id="appointmentDate" placeholder="Выберите дату...">
                             </div>
                             <div class="form-group">
-                                <label for="exampleSelect2" class="form-control-label">Выберите операции</label>
-                                <select multiple="" class="form-control multiple-select" id="exampleSelect2">
-                                    <option>Коронка, зуб временные пластмассовые (лабораторное изготовление)</option>
-                                    <option>Слепок + диагностическая модель </option>
-                                    <option>Удаление постоянного зуба сложное</option>
+                                <label for="services" class="form-control-label">Выберите операции</label>
+                                <select multiple="" class="form-control multiple-select" id="services">
+                                    <option>Брекеты металлические GEMINI (1 челюсть)</option>
+                                    <option>Лечение пульпита/периодонтита</option>
+                                    <option>Полный комплекс мероприятий профессиональной гигиены (оба зубных ряда)</option>
+                                    <option>Профессиональная чистка зубов всей полости (Ультразвук + Air-Flow)</option>
+                                    <option>Удаление ретенированного зуба мудрости (без учета анестезии)</option>
+                                    <option>Установка формирователя десны</option>
+                                    <option>Художественная реставрация зуба</option>
                                 </select>
                             </div>
                             <fieldset class="form-group">
                                 <label class="form-control-label">Источник привлечения</label>
                                 <div class="form-check">
-                                    <label for="optionsRadios1" class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                    <label for="source1" class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="optionsRadios" id="source1" value="option1" checked="">
                                         Друзья
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <label for="optionsRadios2" class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    <label for="source2" class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="optionsRadios" id="source2" value="option2">
                                         Сайт
                                     </label>
                                 </div>
                                 <div class="form-check disabled">
-                                    <label for="optionsRadios3" class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
+                                    <label for="source3" class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="optionsRadios" id="source3" value="option3">
                                         Реклама
                                     </label>
                                 </div>
@@ -90,7 +94,7 @@
                                     Option two is disabled
                                 </label>
                             </div>*@
-                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-30">Сохранить</button>
+                            <button type="submit" class="btn btn-success btn-md waves-effect waves-light m-r-30">Сохранить</button>
                         </form>
                     </div>
                 </div>

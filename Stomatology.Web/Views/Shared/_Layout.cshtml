@@ -138,8 +138,6 @@
     <script src="~/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
     <script src="~/assets/plugins/tether/dist/js/tether.min.js"></script>
 
-    @RenderSection("scripts", required: false)
-
     <!-- Required Fremwork -->
     <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
@@ -167,11 +165,19 @@
     <script src="~/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
     <script src="~/assets/plugins/countdown/js/jquery.counterup.js"></script>
 
+    <!-- Float Chart js -->
+    <script src="~/assets/plugins/flot/jquery.flot.js"></script>
+    <script src="~/assets/plugins/flot/jquery.flot.categories.js"></script>
+    <script src="~/assets/plugins/flot/jquery.flot.pie.js"></script>
+
     <!-- custom js -->
     <script type="text/javascript" src="~/assets/js/main.min.js"></script>
     <script type="text/javascript" src="~/assets/pages/dashboard.js"></script>
+    <script type="text/javascript" src="~/assets/pages/chart-float.js"></script>
     <script type="text/javascript" src="~/assets/pages/elements.js"></script>
     <script src="~/assets/js/menu.min.js"></script>
+
+    @RenderSection("scripts", required: false)
 
     <script>
         var $window = $(window);

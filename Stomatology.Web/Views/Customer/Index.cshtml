@@ -1,0 +1,81 @@
+﻿@model List<Stomatology.Web.Models.CustomerViewModel>
+@{
+    ViewBag.Title = "Клиенты";
+}
+
+<div class="content-wrapper">
+    <!-- Container-fluid starts -->
+    <!-- Main content starts -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main-header">
+                <h4>Клиенты</h4>
+                <a href="@Url.Action("Create")" class="btn btn-md btn-add btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить клиента">
+                    Добавить
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- Hover effect table starts -->
+                <div class="card">
+                    @*<div class="card-header">
+                        <h5 class="card-header-text">Hover Effects on Row</h5>
+                        <p>Add <code>.table-hover</code> Class in table tag</p>
+                    </div>*@
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-sm-12 table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Ф.И.О.</th>
+                                            <th class="text-center">Возраст</th>
+                                            <th class="text-center">Телефон</th>
+                                            @*<th class="text-center">Email</th>*@
+                                            <th class="text-center">Источник привлечения</th>
+                                            <th>Действия</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{ 
+                                            var index = 0;
+                                            foreach (var customer in Model)
+                                            {
+                                                <tr>
+                                                    <td>@(++index)</td>
+                                                    <td>@(customer.LastName + (!string.IsNullOrWhiteSpace(customer.FirstName) ? " " + customer.FirstName[0] + ". " : "") + (!string.IsNullOrWhiteSpace(customer.MiddleName) ? customer.MiddleName[0] + "." : ""))</td>
+                                                    <td class="text-center">@customer.Age</td>
+                                                    <td class="text-center">@customer.Phone</td>
+                                                    @*<td class="text-center">@customer.Email</td>*@
+                                                    <td class="text-center">@customer.SourceTypeName</td>
+                                                    <td>
+                                                        <a href="@Url.Action("Edit", new { id = customer.CustomerId })" class="text-success" style="margin-right:1em;"><i class="icon-pencil"></i></a>
+                                                        <a href="@Url.Action("Show", new { id = customer.CustomerId })" class="text-info" style="margin-right:1em;"><i class="icon-list"></i></a>
+                                                        <a href="@Url.Action("Delete", new { id = customer.CustomerId })" class="text-danger"><i class="icon-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }                            
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hover effect table ends -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $(".sidebar-menu .active").removeClass("active");
+            $("#clients").addClass("active");
+        });
+    </script>
+}

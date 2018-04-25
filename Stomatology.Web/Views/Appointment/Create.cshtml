@@ -1,0 +1,85 @@
+﻿@using Stomatology.Web.Models
+@model Stomatology.Web.Models.AppointmentViewModel
+@{
+    ViewBag.Title = "Запись на приём";
+}
+
+<div class="content-wrapper">
+    <!-- Container-fluid starts -->
+    <!-- Main content starts -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main-header">
+                <h4>Запись на приём</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Form Control starts -->
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-block">
+                        <form action="@Url.Action("Create")" method="post">
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(m => m.AppointmentId)
+
+                            <div class="form-group">
+                                <label for="customer" class="form-control-label">Клиент</label>
+                                @Html.DropDownListFor(m => m.CustomerId, (SelectList)ViewBag.Customers, "", new { @id = "customer", @class = "form-control", @data_placeholder = "Выберите клиента..." })
+                                @Html.ValidationMessageFor(m => m.CustomerId)
+                            </div>
+
+                            <div class="form-group">
+                                <label for="staff" class="form-control-label">Врач</label>
+                                @Html.DropDownListFor(m => m.StaffId, (SelectList)ViewBag.Staff, "", new { @id = "staff", @class = "form-control", @data_placeholder = "Выберите врача..." })
+                                @Html.ValidationMessageFor(m => m.StaffId)
+                            </div>
+
+                            <div class="form-group">
+                                <label for="startdate" class="form-control-label">Дата приёма</label>
+                                @Html.TextBoxFor(m => m.StartDate, new { @id = "startdate", @class = "form-control datepicker", @placeholder = "Введите дату..." })
+                                @Html.ValidationMessageFor(m => m.StartDate)
+                            </div>
+
+                            <div class="form-group">
+                                <label for="services" class="form-control-label">Выберите операции</label>
+                                <select tabindex="1" multiple="multiple" class="form-control" name="SelectedMaterials" data-placeholder="Выберите материалы..." class="span8">
+                                    @foreach (var service in (List<ServiceViewModel>)ViewBag.Materials)
+                                    {
+                                        <option value="@service.ServiceId" @(Model.SelectedServices != null && Model.SelectedServices.Contains(service.ServiceId) ? "selected='selected'" : "")>@service.ServiceName</option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="comment" class="form-control-label">Примечание, статус</label>
+                                @Html.TextBoxFor(m => m.Comment, new { @class = "form-control", @id = "comment", @placeholder = "Введите примечание..." })
+                                @Html.ValidationMessageFor(m => m.Comment)
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-md waves-effect waves-light m-r-30">Сохранить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Form Control ends -->
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $(".sidebar-menu .active").removeClass("active");
+            $("#clients").addClass("active");
+
+            $(function () {
+                $('.datepicker').datetimepicker({
+                    locale: 'ru',
+                    format: 'DD.MM.YYYY',
+                    useCurrent: true
+                });
+            });
+        });
+    </script>
+}

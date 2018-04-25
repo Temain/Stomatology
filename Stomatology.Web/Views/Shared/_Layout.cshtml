@@ -17,6 +17,7 @@
 
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link href="~/Scripts/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
 
     <!-- Weather css -->
     <link href="~/assets/css/svg-weather.css" rel="stylesheet">
@@ -140,6 +141,8 @@
 
     <!-- Required Fremwork -->
     <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/moment/moment.js"></script>
+    <script src="~/Scripts/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
     <!-- waves effects.js -->
     <script src="~/assets/plugins/Waves/waves.min.js"></script>
@@ -153,6 +156,8 @@
 
     <!-- notification -->
     <script src="~/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+
+    @RenderSection("scripts", required: false)
 
     <!-- Rickshaw Chart js -->
     <script src="~/assets/plugins/d3/d3.js"></script>
@@ -176,8 +181,6 @@
     <script type="text/javascript" src="~/assets/pages/chart-float.js"></script>
     <script type="text/javascript" src="~/assets/pages/elements.js"></script>
     <script src="~/assets/js/menu.min.js"></script>
-
-    @RenderSection("scripts", required: false)
 
     <script>
         var $window = $(window);

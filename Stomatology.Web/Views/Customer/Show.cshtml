@@ -1,0 +1,101 @@
+﻿@model Stomatology.Web.Models.CustomerViewModel
+@{
+    ViewBag.Title = "Просмотр информации о клиенте";
+}
+
+<div class="content-wrapper">
+    <!-- Container-fluid starts -->
+    <!-- Main content starts -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main-header">
+                <h4>Просмотр информации о клиенте</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-8 col-lg-12">
+                <div class="card">
+                    <div class="card-block">
+                        @if (Model.Appointments.Any())
+                        {
+                            <div class="table-responsive">
+                            <table class="table m-b-0 photo-table">
+                                <thead>
+                                    <tr class="text-uppercase">
+                                        <th>Операция</th>
+                                        <th class="text-center">Статус</th>
+                                        <th class="text-center">Стоимость</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach(var appointment in Model.Appointments)
+                                    {
+                                        <tr>
+                                            <td>
+                                               @(appointment.Services != null ? string.Join(",", appointment.Services.Select(s => s.ServiceName)) : "")
+                                                <p><i class="icofont icofont-clock-time"></i>@appointment.StartDate.ToShortDateString()</p>
+                                            </td>
+                                            <td class="text-center">@appointment.Comment</td>
+                                            <td class="text-center">@(appointment.Services != null ? appointment.Services.Sum(s => s.Cost) : 0)) руб.</td>
+                                        </tr>
+                                    }                              
+                                </tbody>
+                            </table>
+                        </div>
+                        }
+                        else
+                        {
+                            <span>Клиент ещё не пользовался услугами СЦ</span>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-12">
+                <div class="card">
+                    <div class="user-block-2">
+                        <img class="img-fluid" src="~/assets/images/widget/user-1.png" alt="user-header">
+                        <h5>@Model.LastName <br />@Model.FirstName @Model.MiddleName</h5>
+                        <h6>30 лет</h6>
+                    </div>
+                    <div class="card-block">
+                        <div class="user-block-2-activities">
+                            <div class="user-block-2-active">
+                                Источник привлечения: @Model.SourceTypeName
+                                @*<label class="label label-primary">Друзья</label>*@
+                            </div>
+                        </div>
+                        <div class="user-block-2-activities">
+                            <div class="user-block-2-active">
+                                <i class="icofont icofont-phone"></i> @Model.Phone
+                            </div>
+                        </div>
+                        <div class="user-block-2-activities">
+                            <div class="user-block-2-active">
+                                <i class="icofont icofont-mail"></i> @Model.Email
+                                @*<label class="label label-primary">390</label>*@
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            @*<button type="button" class="btn btn-warning waves-effect waves-light text-uppercase m-r-30">
+                                    Follows
+                                </button>*@
+                            <button type="button" class="btn btn-primary waves-effect waves-light text-uppercase">
+                                Написать письмо
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $(".sidebar-menu .active").removeClass("active");
+            $("#clients").addClass("active");
+        });
+    </script>
+}

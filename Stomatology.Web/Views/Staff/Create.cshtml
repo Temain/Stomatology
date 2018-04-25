@@ -1,0 +1,67 @@
+﻿@model Stomatology.Web.Models.StaffViewModel
+@{
+    ViewBag.Title = "Добавить сотрудника";
+}
+
+<div class="content-wrapper">
+    <!-- Container-fluid starts -->
+    <!-- Main content starts -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main-header">
+                <h4>Добавить сотрудника</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Form Control starts -->
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-block">
+                        <form action="@Url.Action("Create")" method="post">
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(m => m.StaffId)
+
+                            <div class="form-group">
+                                <label for="middleName" class="form-control-label">Фамилия</label>
+                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @id = "middleName", @placeholder = "Введите фамилию..." })
+                                @Html.ValidationMessageFor(m => m.LastName)
+                            </div>
+                            <div class="form-group">
+                                <label for="firstName" class="form-control-label">Имя</label>
+                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @id = "firstName", @placeholder = "Введите имя..." })
+                                @Html.ValidationMessageFor(m => m.FirstName)
+                            </div>
+                            <div class="form-group">
+                                <label for="secondName" class="form-control-label">Отчество</label>
+                                @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control", @id = "secondName", @placeholder = "Введите отчество..." })
+                                @Html.ValidationMessageFor(m => m.MiddleName)
+                            </div>
+                            <div class="form-group">
+                                <label for="seciality" class="form-control-label">Специализация</label>
+                                @Html.TextBoxFor(m => m.Speciality, new { @class = "form-control", @id = "speciality", @placeholder = "Введите специализацию..." })
+                                @Html.ValidationMessageFor(m => m.Speciality)
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-control-label">Номер телефона</label>
+                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @id = "phone", @placeholder = "Введите телефона..." })
+                                @Html.ValidationMessageFor(m => m.Phone)
+                            </div>
+                            <button type="submit" class="btn btn-success btn-md waves-effect waves-light m-r-30">Сохранить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Form Control ends -->
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $(".sidebar-menu .active").removeClass("active");
+            $("#employees").addClass("active");
+        });
+    </script>
+}

@@ -1,0 +1,92 @@
+﻿@model Stomatology.Web.Models.CustomerViewModel
+@{
+    ViewBag.Title = "Добавить клиента";
+}
+
+<div class="content-wrapper">
+    <!-- Container-fluid starts -->
+    <!-- Main content starts -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main-header">
+                <h4>Добавить клиента</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Form Control starts -->
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-block">
+                        <form action="@Url.Action("Create")" method="post">
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-group">
+                                <label for="middleName" class="form-control-label">Фамилия</label>
+                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @id = "middleName", @placeholder = "Введите фамилию..." })
+                                @Html.ValidationMessageFor(m => m.LastName)
+                            </div>
+                            <div class="form-group">
+                                <label for="firstName" class="form-control-label">Имя</label>
+                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @id = "firstName", @placeholder = "Введите имя..." })
+                                @Html.ValidationMessageFor(m => m.FirstName)
+                            </div>
+                            <div class="form-group">
+                                <label for="secondName" class="form-control-label">Отчество</label>
+                                @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control", @id = "secondName", @placeholder = "Введите отчество..." })
+                                @Html.ValidationMessageFor(m => m.MiddleName)
+                            </div>
+                            <div class="form-group">
+                                <label for="age" class="form-control-label">Возраст</label>
+                                @Html.TextBoxFor(m => m.Age, new { @class = "form-control", @id = "age", @placeholder = "Введите возраст..." })
+                                @Html.ValidationMessageFor(m => m.Age)
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-control-label">Электронная почта</label>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @id = "email", @placeholder = "Введите email..." })
+                                @Html.ValidationMessageFor(m => m.Email)
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-control-label">Номер телефона</label>
+                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @id = "phone", @placeholder = "Введите телефона..." })
+                                @Html.ValidationMessageFor(m => m.Phone)
+                            </div>
+                            <fieldset class="form-group">
+                                <label class="form-control-label">Источник привлечения</label>
+                                <div class="form-check">
+                                    <label for="source1" class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="SourceType" id="source1" value="0" checked="">
+                                        Друзья
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label for="source2" class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="SourceType" id="source2" value="1">
+                                        Сайт
+                                    </label>
+                                </div>
+                                <div class="form-check disabled">
+                                    <label for="source3" class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="SourceType" id="source3" value="2">
+                                        Реклама
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="btn btn-success btn-md waves-effect waves-light m-r-30">Сохранить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Form Control ends -->
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $(".sidebar-menu .active").removeClass("active");
+            $("#clients").addClass("active");
+        });
+    </script>
+}

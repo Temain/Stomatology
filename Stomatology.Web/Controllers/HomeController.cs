@@ -29,6 +29,16 @@ namespace Stomatology.Web.Controllers
             return View();
         }
 
+        public ActionResult AddClient()
+        {
+            return View();
+        }
+
+        public ActionResult EditClient()
+        {
+            return View();
+        }
+
         public ActionResult ShowClient()
         {
             return View();
@@ -39,7 +49,27 @@ namespace Stomatology.Web.Controllers
             return View();
         }
 
+        public ActionResult AddEmployee()
+        {
+            return View();
+        }
+
+        public ActionResult EditEmployee()
+        {
+            return View();
+        }
+
         public ActionResult Services()
+        {
+            return View();
+        }
+
+        public ActionResult AddService()
+        {
+            return View();
+        }
+
+        public ActionResult EditService()
         {
             return View();
         }

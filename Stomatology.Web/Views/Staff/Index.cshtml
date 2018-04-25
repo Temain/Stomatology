@@ -1,0 +1,77 @@
+﻿@model List<Stomatology.Web.Models.StaffViewModel>
+@{
+    ViewBag.Title = "Сотрудники";
+}
+
+<div class="content-wrapper">
+    <!-- Container-fluid starts -->
+    <!-- Main content starts -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main-header">
+                <h4>Сотрудники</h4>
+                <a href="@Url.Action("Create")" class="btn btn-md btn-add btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить сотрудника">
+                    Добавить
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- Hover effect table starts -->
+                <div class="card">
+                    @*<div class="card-header">
+                            <h5 class="card-header-text">Hover Effects on Row</h5>
+                            <p>Add <code>.table-hover</code> Class in table tag</p>
+                        </div>*@
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-sm-12 table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Ф.И.О.</th>
+                                            <th class="text-center">Специализация</th>
+                                            <th class="text-center">Телефон</th>
+                                            <th>Действия</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                          @{ 
+                                            var index = 0;
+                                            foreach (var staff in Model)
+                                            {
+                                                <tr>
+                                                    <td>@(++index)</td>
+                                                    <td>@(staff.LastName + (!string.IsNullOrWhiteSpace(staff.FirstName) ? " " + staff.FirstName[0] + ". " : "") + (!string.IsNullOrWhiteSpace(staff.MiddleName) ? staff.MiddleName[0] + "." : ""))</td>
+                                                    <td class="text-center">@staff.Speciality</td>
+                                                    <td class="text-center">@staff.Phone</td>
+                                                    <td>
+                                                        <a href="@Url.Action("Edit", new { id = staff.StaffId })" class="text-success" style="margin-right:1em;"><i class="icon-pencil"></i></a>
+                                                        @*<a href="@Url.Action("Show", new { id = staff.StaffId })" class="text-info" style="margin-right:1em;"><i class="icon-list"></i></a>*@
+                                                        <a href="@Url.Action("Delete", new { id = staff.StaffId })" class="text-danger"><i class="icon-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }                                               
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hover effect table ends -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $(".sidebar-menu .active").removeClass("active");
+            $("#employees").addClass("active");
+        });
+    </script>
+}

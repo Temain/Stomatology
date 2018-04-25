@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Stomatology.Web.Models.AppointmentViewModel>
 @{
     ViewBag.Title = "Запись на приём";
 }
@@ -10,9 +10,9 @@
     <!-- Container-fluid starts -->
     <!-- Main content starts -->
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" style="margin-bottom: 1.5em;">
             <div class="col-sm-6" style="margin-top: 2em;">
-                <a href="@Url.Action("AddAppointment")" class="btn btn-lg btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Запись на приём" aria-describedby="tooltip164661">
+                <a href="@Url.Action("Create")" class="btn btn-lg btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Запись на приём" aria-describedby="tooltip164661">
                     Записать на приём
                 </a>
             </div>
@@ -21,12 +21,12 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
-                    <div class="card-block button-list" style="float: right;">
-                        <button type="button" class="btn btn-sm btn-primary waves-effect waves-light " data-toggle="tooltip" data-placement="top" title="" data-original-title=".btn-sm">
-                            <<
-                        </button>
-                        <button type="button" class="btn btn-sm btn-primary waves-effect waves-light " data-toggle="tooltip" data-placement="top" title="" data-original-title=".btn-sm">
+                    <div class="card-block button-list">
+                        <button type="button" style="float: right;" class="btn btn-sm btn-primary waves-effect waves-light " data-toggle="tooltip" data-placement="top" title="" data-original-title=".btn-sm">
                             >>
+                        </button>
+                        <button type="button" style="float: right; margin-right: 2em;" class="btn btn-sm btn-primary waves-effect waves-light " data-toggle="tooltip" data-placement="top" title="" data-original-title=".btn-sm">
+                            <<
                         </button>
                     </div>
                     <div class="cd-schedule loading">

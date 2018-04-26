@@ -24,11 +24,11 @@ namespace Stomatology.Web.Controllers
                 currentDate = currentDate.AddDays(7 * weekOffset ?? 0);
             }
 
-            ViewBag.CurrentDate = currentDate;
+            ViewBag.CurrentDate = currentDate.Date;
             ViewBag.WeekOffset = weekOffset ?? 0;
 
             var endWeekDate = currentDate.AddDays(7);
-            var appointments = await db.Appointments.Where(x => x.StartDate >= DbFunctions.TruncateTime(currentDate) && x.StartDate <= DbFunctions.TruncateTime(endWeekDate) && x.DeleteDate == null).ToListAsync();
+            var appointments = await db.Appointments.Where(x => x.StartDate >= currentDate && x.StartDate <= endWeekDate && x.DeleteDate == null).ToListAsync();
             var viewModels = Mapper.Map<List<AppointmentViewModel>>(appointments);
 
             return View(viewModels);

@@ -22,7 +22,7 @@ namespace Stomatology.Web.Controllers
             var newCustomers = customers.Where(c => c.CreateDate >= startDate && c.CreateDate < endDate);
 
             var staff = db.Staff.ToList();
-            var newStaff = customers.Where(c => c.CreateDate >= startDate && c.CreateDate < endDate);
+            var newStaff = staff.Where(c => c.CreateDate >= startDate && c.CreateDate < endDate);
 
             var appointments = db.Appointments.ToList();
             var newAppointments = appointments.Where(c => c.CreateDate >= startDate && c.CreateDate < endDate);

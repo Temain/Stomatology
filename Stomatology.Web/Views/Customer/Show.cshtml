@@ -37,7 +37,7 @@
                                                 <p><i class="icofont icofont-clock-time"></i>@appointment.StartDate.ToShortDateString()</p>
                                             </td>
                                             <td class="text-center">@appointment.Comment</td>
-                                            <td class="text-center">@(appointment.Services != null ? appointment.Services.Sum(s => s.Cost) : 0)) руб.</td>
+                                            <td class="text-center">@(appointment.Services != null ? (int) appointment.Services.Sum(s => s.Cost) : 0) руб.</td>
                                         </tr>
                                     }                              
                                 </tbody>

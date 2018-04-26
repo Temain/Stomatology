@@ -62,7 +62,7 @@
                                     var days = new[] { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница" };
 
                                     var appointments = Model.GroupBy(g => g.StartDate.Date)
-                                        .Select(x => new { Date = x.Key, Appointmens = x.OrderBy(o => o.StartTime) });
+                                        .Select(x => new { Date = x.Key, Appointmens = x.OrderBy(o => o.StartTime.TimeOfDay) });
                                     var index = 0;
                                     foreach (var day in days)
                                     {
@@ -82,6 +82,12 @@
                                                     </li>
                                                 }
                                             </ul>
+                                            }
+                                            else
+                                            {
+                                                <ul>
+                                               
+                                                </ul>
                                             }
                                         </li>
 

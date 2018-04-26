@@ -107,30 +107,33 @@ $(document).ready(function(){
 /*Donut Hole*/
  function donutChart(){
   
-var data2 = [{
-  label: "Сайт",
-  data: 2034,
-  color: "#62A83B"
-}, {
-  label: "Друзь¤",
-  data: 16410,
-  color: "#2897CB"
-}, {
-  label: "Реклама",
-  data: 4670,
-  color: "#DEAB34"
-}];
-  $.plot('#placeholder3', data2, {
-    series: {
-        pie: {
-            innerRadius: 0.5,
-            show: true
-        },
-         legend: {
-        show: true
-    }
-    }
-});
+//var data2 = [{
+//  label: "Сайт",
+//  data: 2034,
+//  color: "#62A83B"
+//}, {
+//  label: "Друзь¤",
+//  data: 16410,
+//  color: "#2897CB"
+//}, {
+//  label: "Реклама",
+//  data: 4670,
+//  color: "#DEAB34"
+//}];
+     $.get('/Home/GetReportBySource', function (data2) {
+         $.plot('#placeholder3', data2, {
+             series: {
+                 pie: {
+                     innerRadius: 0.5,
+                     show: true
+                 },
+                 legend: {
+                     show: true
+                 }
+             }
+         });
+     });
+
   };
 });
 

@@ -16,11 +16,11 @@ namespace Stomatology.Web.App_Start
                 cfg.CreateMap<ServiceViewModel, Service>();
                 cfg.CreateMap<Appointment, AppointmentViewModel>()
                     .ForMember(dest => dest.StaffName, opt => opt.MapFrom(src => src.Staff.LastName + " "
-                        + (string.IsNullOrWhiteSpace(src.Staff.FirstName) ? src.Staff.FirstName[0] + "." : "")
-                        + (string.IsNullOrWhiteSpace(src.Staff.MiddleName) ? src.Staff.MiddleName[0] + "." : "")))
+                        + (!string.IsNullOrWhiteSpace(src.Staff.FirstName) ? src.Staff.FirstName[0] + "." : "")
+                        + (!string.IsNullOrWhiteSpace(src.Staff.MiddleName) ? src.Staff.MiddleName[0] + "." : "")))
                     .ForMember(dest => dest.CustomerName, opt => opt.MapFrom(src => src.Customer.LastName + " "
-                        + (string.IsNullOrWhiteSpace(src.Customer.FirstName) ? src.Customer.FirstName[0] + "." : "")
-                        + (string.IsNullOrWhiteSpace(src.Customer.MiddleName) ? src.Customer.MiddleName[0] + "." : "")));
+                        + (!string.IsNullOrWhiteSpace(src.Customer.FirstName) ? src.Customer.FirstName[0] + "." : "")
+                        + (!string.IsNullOrWhiteSpace(src.Customer.MiddleName) ? src.Customer.MiddleName[0] + "." : "")));
                 cfg.CreateMap<AppointmentViewModel, Appointment>();
             });
         }

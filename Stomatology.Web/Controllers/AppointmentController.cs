@@ -16,9 +16,19 @@ namespace Stomatology.Web.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Appointment
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(int? weekOffset = null)
         {
-            var appointments = await db.Appointments.Where(x => x.DeleteDate == null).ToListAsync();
+            var currentDate = DateTime.Now.StartOfWeek(DayOfWeek.Monday);
+            if (weekOffset != null)
+            {
+                currentDate = currentDate.AddDays(7 * weekOffset ?? 0);
+            }
+
+            ViewBag.CurrentDate = currentDate;
+            ViewBag.WeekOffset = weekOffset ?? 0;
+
+            var endWeekDate = currentDate.AddDays(7);
+            var appointments = await db.Appointments.Where(x => x.StartDate >= DbFunctions.TruncateTime(currentDate) && x.StartDate <= DbFunctions.TruncateTime(endWeekDate) && x.DeleteDate == null).ToListAsync();
             var viewModels = Mapper.Map<List<AppointmentViewModel>>(appointments);
 
             return View(viewModels);
@@ -184,6 +194,15 @@ namespace Stomatology.Web.Controllers
                    ServiceName = x.ServiceName + ", " + (x.Cost + "руб." ?? "")
                })
                .ToListAsync();
+        }
+    }
+
+    public static class DateTimeExtensions
+    {
+        public static DateTime StartOfWeek(this DateTime dt, DayOfWeek startOfWeek)
+        {
+            int diff = (7 + (dt.DayOfWeek - startOfWeek)) % 7;
+            return dt.AddDays(-1 * diff).Date;
         }
     }
 }

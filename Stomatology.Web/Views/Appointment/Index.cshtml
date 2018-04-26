@@ -1,6 +1,7 @@
 ﻿@model List<Stomatology.Web.Models.AppointmentViewModel>
 @{
     ViewBag.Title = "Запись на приём";
+    var currentDate = (DateTime) ViewBag.CurrentDate;
 }
 
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
@@ -22,13 +23,15 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-block button-list">
-                        <button type="button" style="float: right;" class="btn btn-sm btn-primary waves-effect waves-light " data-toggle="tooltip" data-placement="top" title="" data-original-title=".btn-sm">
+                        <a href="@Url.Action("Index", new { weekOffset = (int) ViewBag.WeekOffset + 1 })" style="float: right;" class="btn btn-sm btn-primary waves-effect waves-light " data-toggle="tooltip" data-placement="top" title="" data-original-title=".btn-sm">
                             >>
-                        </button>
-                        <button type="button" style="float: right; margin-right: 2em;" class="btn btn-sm btn-primary waves-effect waves-light " data-toggle="tooltip" data-placement="top" title="" data-original-title=".btn-sm">
+                        </a>
+                        <a href="@Url.Action("Index", new { weekOffset = (int) ViewBag.WeekOffset - 1 })" style="float: right; margin-right: 2em;" class="btn btn-sm btn-primary waves-effect waves-light " data-toggle="tooltip" data-placement="top" title="" data-original-title=".btn-sm">
                             <<
-                        </button>
+                        </a>
                     </div>
+                    @if (Model.Any())
+                    {
                     <div class="cd-schedule loading">
                         <div class="timeline">
                             <ul>
@@ -55,121 +58,36 @@
                         </div> <!-- .timeline -->
                         <div class="events">
                             <ul>
-                                <li class="events-group">
-                                    <div class="top-info"><span>Понедельник <br />12.02</span></div>
-                                    <ul>
-                                        <li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
-                                            <a href="#0">
-                                                <em class="event-name">Егоров Е.Е.</em>
-                                            </a>
+                                @{ 
+                                    var days = new[] { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница" };
+
+                                    var appointments = Model.GroupBy(g => g.StartDate.Date)
+                                        .Select(x => new { Date = x.Key, Appointmens = x.OrderBy(o => o.StartTime) });
+                                    var index = 0;
+                                    foreach (var day in days)
+                                    {
+                                        var dayAppointments = appointments.FirstOrDefault(a => (int) a.Date.DayOfWeek == index);
+
+                                        <li class="events-group">
+                                            <div class="top-info"><span>@day <br /> @currentDate.AddDays(index).ToString("dd.MM")</span></div>
+                                            @if (dayAppointments != null)
+                                            { 
+                                            <ul>
+                                                @foreach (var appointment in dayAppointments.Appointmens)
+                                                {
+                                                      <li class="single-event" data-start="@appointment.StartTime.ToString("HH:mm")" data-end="@appointment.EndTime.ToString("HH:mm")" data-content="event-abs-circuit" data-event="event-1">
+                                                        <a href="#0">
+                                                            <em class="event-name">@appointment.CustomerName</em>
+                                                        </a>
+                                                    </li>
+                                                }
+                                            </ul>
+                                            }
                                         </li>
-                                        <li class="single-event" data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2">
-                                            <a href="#0">
-                                                <em class="event-name">Викторов В.В.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="14:00" data-end="15:15" data-content="event-yoga-1" data-event="event-3">
-                                            <a href="#0">
-                                                <em class="event-name">Семёнова С.С.</em>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="events-group">
-                                    <div class="top-info"><span>Вторник <br />13.02</span></div>
-                                    <ul>
-                                        <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-rowing-workout" data-event="event-2">
-                                            <a href="#0">
-                                                <em class="event-name">Петрова Г.В.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="11:30" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-                                            <a href="#0">
-                                                <em class="event-name">Жернов А.П.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="13:30" data-end="15:00" data-content="event-abs-circuit" data-event="event-1">
-                                            <a href="#0">
-                                                <em class="event-name">Дедиченко Р.О.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="15:45" data-end="16:45" data-content="event-yoga-1" data-event="event-3">
-                                            <a href="#0">
-                                                <em class="event-name">Красницкая М.В.</em>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="events-group">
-                                    <div class="top-info"><span>Среда <br />14.02</span></div>
-                                    <ul>
-                                        <li class="single-event" data-start="09:00" data-end="10:15" data-content="event-restorative-yoga" data-event="event-4">
-                                            <a href="#0">
-                                                <em class="event-name">Викторов В.В.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="10:45" data-end="11:45" data-content="event-yoga-1" data-event="event-3">
-                                            <a href="#0">
-                                                <em class="event-name">Сидорова С.С.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="12:00" data-end="13:45" data-content="event-rowing-workout" data-event="event-2">
-                                            <a href="#0">
-                                                <em class="event-name">Егоров Е.Е.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="13:45" data-end="15:00" data-content="event-yoga-1" data-event="event-3">
-                                            <a href="#0">
-                                                <em class="event-name">Нежданова Н.Н.</em>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="events-group">
-                                    <div class="top-info"><span>Четверг <br />15.02</span></div>
-                                    <ul>
-                                        <li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
-                                            <a href="#0">
-                                                <em class="event-name">Сигидова Л.П.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="12:00" data-end="13:45" data-content="event-restorative-yoga" data-event="event-4">
-                                            <a href="#0">
-                                                <em class="event-name">Шопен А.М.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="15:30" data-end="16:30" data-content="event-abs-circuit" data-event="event-1">
-                                            <a href="#0">
-                                                <em class="event-name">Кузьмин К.К.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="17:00" data-end="18:30" data-content="event-rowing-workout" data-event="event-2">
-                                            <a href="#0">
-                                                <em class="event-name">Вихрев И.И.</em>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="events-group">
-                                    <div class="top-info"><span>Пятница <br />16.02</span></div>
-                                    <ul>
-                                        <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-rowing-workout" data-event="event-2">
-                                            <a href="#0">
-                                                <em class="event-name">Дедиченко Р.О.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="12:30" data-end="14:00" data-content="event-abs-circuit" data-event="event-1">
-                                            <a href="#0">
-                                                <em class="event-name">Жернов А.П.</em>
-                                            </a>
-                                        </li>
-                                        <li class="single-event" data-start="15:45" data-end="16:45" data-content="event-yoga-1" data-event="event-3">
-                                            <a href="#0">
-                                                <em class="event-name">Красницкая М.В.</em>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+
+                                        index++;
+                                    }      
+                                }
                             </ul>
                         </div>
                         <div class="event-modal">
@@ -188,6 +106,13 @@
                         </div>
                         <div class="cover-layer"></div>
                     </div> <!-- .cd-schedule -->
+                    }
+                    else
+                    {
+                    <div class="well">
+                        Нет записей на приём.
+                    </div>
+                    }
                 </div>
             </div>
         </div>

@@ -16,7 +16,8 @@ namespace Stomatology.Web.Models
 
         public DateTime StartDate { get; set; }
 
-        public DateTime EndDate { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
 
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
